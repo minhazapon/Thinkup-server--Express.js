@@ -64,7 +64,36 @@ async function run() {
     })
      /////typeScriptData/////////
 
+     ////react.js///////////
+     
+     const ReactCollection = client.db('reactDB').collection('reactData')
 
+     app.get('/reactData', async(req, res) => {
+          
+      const cursor = ReactCollection.find();
+      const result = await cursor.toArray();
+      res.send(result)
+     
+    })
+
+
+
+     ////react.js///////////
+
+     ///////next.js///////////
+      
+     const nextCollection = client.db('nextDB').collection('nextData')
+
+     app.get('/nextData', async(req, res) => {
+          
+      const cursor = nextCollection.find();
+      const result = await cursor.toArray();
+      res.send(result)
+     
+    })
+
+
+     ///////next.js///////////
       
 
 
