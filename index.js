@@ -9,7 +9,7 @@ console.log(process.env.DB_PASS)
 
 app.use(cors())
 app.use(express.json());
-
+  
 app.get('/', (req, res) => {
   res.send('ThinkUp sever!')
 })
@@ -33,6 +33,38 @@ async function run() {
     // Connect the client to the server	(optional starting in v4.7)
     await client.connect();
     // Send a ping to confirm a successful connection
+
+    ////crud/////////
+
+    
+    /////javaScriptData/////////
+    const javascriptCollection = client.db('javascriptDB').collection('javascriptData')
+
+    app.get('/javascriptData', async(req, res) => {
+          
+      const cursor = javascriptCollection.find();
+      const result = await cursor.toArray();
+      res.send(result)
+      
+
+    })
+
+
+     /////javaScriptData/////////
+
+
+      
+
+
+
+
+
+
+
+    ////crud/////////
+
+
+
     await client.db("admin").command({ ping: 1 });
     console.log("Pinged your deployment. You successfully connected to MongoDB!");
   } finally {
