@@ -49,8 +49,20 @@ async function run() {
 
     })
 
-
      /////javaScriptData/////////
+
+
+     /////typeScriptData/////////
+     const typescriptCollection = client.db('typescriptDB').collection('typescriptData')
+
+     app.get('/typescriptData', async(req, res) => {
+          
+       const cursor = typescriptCollection.find();
+       const result = await cursor.toArray();
+       res.send(result)
+      
+    })
+     /////typeScriptData/////////
 
 
       

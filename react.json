@@ -1,0 +1,183 @@
+[
+{
+    "que":"What is React?",
+    "ans":"React is a JavaScript library used for building user interfaces, primarily for single-page applications. It's maintained by Facebook and focuses on building reusable UI components."
+},
+{
+    "que":"What are components in React?",
+    "ans":"Components are the building blocks of a React application's UI. They can be class-based or functional and are responsible for rendering the UI."
+},
+{
+    "que":"What is JSX?",
+    "ans":"JSX is a syntax extension for JavaScript that looks similar to HTML and is used in React to describe UI elements."
+},
+{
+    "que":"What is the Virtual DOM in React?",
+    "ans":"The Virtual DOM is a lightweight copy of the actual DOM. React uses it to efficiently update and render UI components by comparing the current DOM with the new one, and applying the minimal necessary changes."
+},
+{
+    "que":"What are props in React?",
+    "ans":"Props are short for properties. They are read-only attributes used to pass data from parent to child components in React."
+},
+{
+    "que":"What is state in React?",
+    "ans":"State is a JavaScript object that holds dynamic data for a component. Unlike props, state is managed within the component itself and can be updated."
+},
+{
+    "que":"What is the difference between state and props?",
+    "ans":"Props are immutable and passed down from parent to child, while state is mutable and managed within the component."
+},
+{
+    "que":"What is the purpose of setState in React?",
+    "ans":"setState is used to update the state of a component and trigger a re-render."
+},
+{
+    "que":"What are React Hooks?",
+    "ans":"Hooks are functions that allow you to use state and other React features in functional components. Common hooks include useState, useEffect, and useContext."
+},
+{
+    "que":"What is useState in React?",
+    "ans":"useState is a React Hook that allows you to add state to functional components."
+},
+{
+    "que":"What is the useEffect hook?",
+    "ans":"useEffect is a hook that runs side effects in functional components, such as fetching data, directly updating the DOM, or timers."
+},
+{
+    "que":"What is a higher-order component (HOC)?",
+    "ans":"An HOC is a function that takes a component and returns a new component, typically used for reusing component logic."
+},
+{
+    "que":"What are pure components in React?",
+    "ans":"Pure components are components that do not re-render if their props or state do not change. They implement shouldComponentUpdate to perform shallow comparison of props and state."
+},
+{
+    "que":"What is the difference between a class component and a functional component?",
+    "ans":"Class components are ES6 classes that extend React.Component, while functional components are plain JavaScript functions that use hooks like useState and useEffect."
+},
+{
+    "que":"What is React.memo?",
+    "ans":"React.memo is a higher-order component used to optimize performance by memoizing a functional component, preventing re-renders if its props don't change."
+},
+{
+    "que":"What is prop drilling in React?",
+    "ans":"Prop drilling is the process of passing props through multiple nested components to reach a deeply nested component."
+},
+{
+    "que":"What is useContext in React?",
+    "ans":"useContext is a hook that allows components to consume context values directly without passing props through every level of the component tree."
+},
+{
+    "que":"What are React Fragments?",
+    "ans":"React Fragments allow you to group multiple elements without adding extra nodes to the DOM."
+},
+{
+    "que":"What is the key prop, and why is it important?",
+    "ans":"The key prop is used by React to identify which items have changed, been added, or removed from a list, improving the efficiency of rendering lists."
+},
+{
+    "que":"What is lazy loading in React?",
+    "ans":"Lazy loading is a technique that defers loading non-essential resources at the initial load time, improving performance. React supports lazy loading components using React.lazy and Suspense."
+},
+{
+    "que":"What is Redux, and how does it relate to React?",
+    "ans":"Redux is a state management library commonly used with React to manage application-wide state in a predictable way using actions, reducers, and a store."
+},
+{
+    "que":"What is a reducer in React (with hooks or Redux)?",
+    "ans":"A reducer is a pure function that takes the current state and an action as arguments, and returns a new state."
+},
+{
+    "que":"What is useReducer in React?",
+    "ans":"useReducer is a hook that is an alternative to useState for managing complex state logic in functional components, similar to how reducers work in Redux."
+},
+{
+    "que":"How do you optimize performance in a React app?",
+    "ans":"Performance can be optimized through techniques such as memoizing components with React.memo, using the useCallback and useMemo hooks, code splitting, lazy loading, and avoiding unnecessary re-renders."
+},
+{
+    "que":"What is the purpose of React's StrictMode?",
+    "ans":"StrictMode is a tool that highlights potential problems in an application, such as deprecated features or unexpected side effects in lifecycle methods."
+},
+{
+    "que":"What is server-side rendering (SSR)?",
+    "ans":"SSR is the process of rendering React components on the server before sending them to the client, improving performance and SEO. React can perform SSR with libraries like Next.js."
+},
+{
+    "que":"What are controlled components in React?",
+    "ans":"Controlled components are form elements (like inputs) that have their value managed by the React state, ensuring the UI is always in sync with the application state."
+},
+{
+    "que":"What are uncontrolled components in React?",
+    "ans":"Uncontrolled components maintain their own internal state rather than being controlled by React. They rely on the DOM for their state."
+},
+{
+    "que":"What is the significance of the ref attribute in React?",
+    "ans":"The ref attribute is used to directly access DOM elements or React components, allowing for manipulation outside of the typical React data flow."
+},
+{
+    "que":"How do React's useCallback and useMemo hooks differ?",
+    "ans":"useCallback is used to memoize functions to prevent unnecessary re-creations, while useMemo is used to memoize the result of expensive computations."
+},
+{
+    "que":"What is the context API in React?",
+    "ans":"The context API allows you to share values (like state) between components without passing props through every level of the component tree."
+},
+{
+    "que":"What are React portals?",
+    "ans":"React portals allow you to render children into a different part of the DOM that exists outside the parent component hierarchy."
+},
+{
+    "que":"What is reconciliation in React?",
+    "ans":"Reconciliation is the process React uses to update the UI by comparing the current state with the Virtual DOM, determining the minimal changes needed, and applying them to the actual DOM."
+},
+{
+    "que":"How does shouldComponentUpdate work?",
+    "ans":"shouldComponentUpdate is a lifecycle method that determines if a component should re-render. If it returns false, the component and its children will not re-render."
+},
+{
+    "que":"What are React error boundaries?",
+    "ans":"Error boundaries are components that catch JavaScript errors anywhere in their child component tree, log the errors, and display a fallback UI instead of crashing the app."
+},
+{
+    "que":"How do you handle forms in React?",
+    "ans":"Forms in React can be handled using controlled components, where the input's value is bound to the state, or using uncontrolled components with refs."
+},
+{
+    "que":"What is React Fiber?",
+    "ans":"React Fiber is the reimplementation of React's reconciliation algorithm, introduced in React 16. It allows for incremental rendering, making it more flexible in handling large updates."
+},
+{
+    "que":"What is the difference between class-based and function-based components in React 16.8+?",
+    "ans":"Function-based components use hooks to manage state and lifecycle events, making them simpler and more readable, while class-based components use lifecycle methods and this.state for the same purpose."
+},
+{
+    "que":"How do you use useRef in React?",
+    "ans":"useRef is a hook that returns a mutable ref object that persists across renders. It is often used for accessing DOM elements or storing values that don't trigger re-renders."
+},
+{
+    "que":"What is Suspense in React?",
+    "ans":"Suspense is a React component used to delay the rendering of its children until some condition (like a lazy-loaded component or data fetching) is met."
+},
+{
+    "que":"What are the lifecycle methods of React?",
+    "ans":"The common lifecycle methods include componentDidMount, componentDidUpdate, componentWillUnmount, and shouldComponentUpdate."
+},
+{
+    "que":"What is useImperativeHandle in React?",
+    "ans":"useImperativeHandle is a hook that allows you to customize the instance value that is exposed when using ref in function components."
+},
+{
+    "que":"What is hydrate in React?",
+    "ans":"hydrate is a method used to (hydrate) a server-rendered app with client-side React. It's used during server-side rendering (SSR) to attach event listeners to pre-rendered HTML."
+},
+{
+    "que":"How do you implement routing in React?",
+    "ans":"Routing in React is implemented using libraries like React Router, which provides components like <Route>, <Switch>, and <Link> for client-side navigation."
+},
+{
+    "que":"What are React keys used for?",
+    "ans":"React keys are used to uniquely identify elements in a list of items or components. When rendering lists, React uses keys to track which items have changed, been added, or removed. This helps optimize the process of updating the UI by ensuring that only the elements that actually change are re-rendered, rather than the entire list."
+}
+
+]
