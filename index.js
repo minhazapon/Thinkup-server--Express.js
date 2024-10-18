@@ -148,6 +148,51 @@ async function run() {
 
 
      /////mongoose////
+
+
+     ////reduxData////
+
+     const reduxCollection = client.db('reduxDB').collection('reduxData')
+
+     app.get('/reduxData', async(req, res) => {
+          
+      const cursor = reduxCollection.find();
+      const result = await cursor.toArray();
+      res.send(result)
+     })
+     ////reduxData////
+
+
+     /////postgresData////
+      
+     const postgresCollection = client.db('postgresDB').collection('postgresData')
+
+     app.get('/postgresData', async(req, res) => {
+          
+      const cursor = postgresCollection.find();
+      const result = await cursor.toArray();
+      res.send(result)
+     })
+
+
+     /////postgresData////
+
+
+     /////docker//////
+
+
+     const dockerCollection = client.db('dockerDB').collection('dockerData')
+
+     app.get('/dockerData', async(req, res) => {
+          
+      const cursor = dockerCollection.find();
+      const result = await cursor.toArray();
+      res.send(result)
+     })
+
+
+
+     /////docker//////
       
 
 
