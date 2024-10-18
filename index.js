@@ -64,7 +64,7 @@ async function run() {
     })
      /////typeScriptData/////////
 
-     ////react.js///////////
+     ////react.jsData///////////
      
      const ReactCollection = client.db('reactDB').collection('reactData')
 
@@ -78,9 +78,9 @@ async function run() {
 
 
 
-     ////react.js///////////
+     ////react.jsData///////////
 
-     ///////next.js///////////
+     ///////next.jsData///////////
       
      const nextCollection = client.db('nextDB').collection('nextData')
 
@@ -91,9 +91,63 @@ async function run() {
       res.send(result)
      
     })
+     ///////next.jsData///////////
+
+     ///////nodeData//////////
+
+     const nodeCollection = client.db('nodeDB').collection('nodeData')
+
+     app.get('/nodeData', async(req, res) => {
+          
+      const cursor = nodeCollection.find();
+      const result = await cursor.toArray();
+      res.send(result)
+     
+     })
+     ///////nodeData//////////
 
 
-     ///////next.js///////////
+     ////expressData///////////
+
+     const expressCollection = client.db('expressDB').collection('expressData')
+
+     app.get('/expressData', async(req, res) => {
+          
+      const cursor = expressCollection.find();
+      const result = await cursor.toArray();
+      res.send(result)
+     })
+     ////expressData///////////
+
+
+     ///mongoDB/////////////////
+
+     const mongoCollection = client.db('mongoDB').collection('mongoData')
+
+     app.get('/mongoData', async(req, res) => {
+          
+      const cursor = mongoCollection.find();
+      const result = await cursor.toArray();
+      res.send(result)
+     })
+
+
+     ///mongoDB/////////////////
+
+
+     /////mongoose////
+
+     const mongooseCollection = client.db('mongooseDB').collection('mongooseData')
+
+     app.get('/mongooseData', async(req, res) => {
+          
+      const cursor = mongooseCollection.find();
+      const result = await cursor.toArray();
+      res.send(result)
+     })
+
+
+     /////mongoose////
       
 
 
