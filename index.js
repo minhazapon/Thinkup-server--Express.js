@@ -195,6 +195,19 @@ async function run() {
      /////docker//////
 
 
+     //////awsData////////
+
+
+     const awsCollection = client.db('awsDB').collection('awsData')
+
+     app.get('/awsData', async(req, res) => {
+          
+      const cursor = awsCollection.find();
+      const result = await cursor.toArray();
+      res.send(result)
+     })
+
+
 
 
      /////crud question/////////
