@@ -193,6 +193,37 @@ async function run() {
 
 
      /////docker//////
+
+
+
+
+     /////crud question/////////
+
+     const queCollection = client.db('queDB').collection('queData')
+
+
+
+     /////////////add////
+
+     app.post('/queData', async(req, res) => {
+          
+         const queData = req.body 
+         console.log(queData)
+         const result = await queCollection.insertOne(queData)
+         res.send(result)
+     
+         
+     })
+
+
+
+
+
+
+
+
+
+     /////crud question/////////
       
 
 
