@@ -208,6 +208,19 @@ async function run() {
      })
 
 
+     /////graphqlData//////////
+
+     const graphqlCollection = client.db('graphqlDB').collection('graphqlData')
+
+     app.get('/graphqlData', async(req, res) => {
+          
+      const cursor = graphqlCollection.find();
+      const result = await cursor.toArray();
+      res.send(result)
+     })
+
+
+
 
 
      /////crud question/////////
