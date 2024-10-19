@@ -16,7 +16,7 @@ app.get('/', (req, res) => {
 
 ////////////////////////////mongodb//////////////////////////////////////////
 
-const { MongoClient, ServerApiVersion } = require('mongodb');
+const { MongoClient, ServerApiVersion, ObjectId } = require('mongodb');
 const uri = `mongodb+srv://${process.env.DB_USERS}:${process.env.DB_PASS}@cluster0.ruz4b.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`
 
 // Create a MongoClient with a MongoClientOptions object to set the Stable API version
@@ -215,8 +215,69 @@ async function run() {
          
      })
 
+     /////////////read//////
 
 
+     app.get('/queData', async(req, res) => {
+          
+        const cursor = queCollection.find()
+        const result = await cursor.toArray()
+        res.send(result)
+  
+      
+     })
+    
+
+     ///////delete////
+
+
+     app.delete('/queData/:id', async(req, res) => {
+          
+         const id = req.params.id 
+         const query = { _id: new ObjectId(id) }
+         const result = await queCollection.deleteOne(query)
+         res.send(result)
+
+    
+     }) 
+ 
+    
+     
+    //////////////update////////////
+    
+    app.get('/queData/:id',  async(req, res) => {
+      
+      const id = req.params.id 
+      const query = { _id: new ObjectId(id)}
+      const result = await queCollection.findOne(query)
+      res.send(result)
+  
+     })
+
+
+     app.put('/queData/:id',  async(req, res) => {
+      
+   
+      const id = req.params.id 
+      const UpdateUser = req.body 
+      console.log(id, UpdateUser) 
+      const filter = { _id: new ObjectId(id) }
+      const option = { upsert: true } 
+      const upDtUsr = req.body 
+      const queZ = {
+
+         $set:{
+
+          question:  upDtUsr.question, 
+          answer:  upDtUsr.answer, 
+            
+        
+         }
+
+      }
+      const result = await queCollection.updateOne(filter, queZ, option)
+      res.send(result)
+  })
 
 
 
