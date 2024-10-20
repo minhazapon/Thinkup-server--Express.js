@@ -205,7 +205,7 @@ async function run() {
       const cursor = awsCollection.find();
       const result = await cursor.toArray();
       res.send(result)
-     })
+     }) 
 
 
      /////graphqlData//////////
