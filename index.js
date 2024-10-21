@@ -1,11 +1,11 @@
 const express = require('express')
 const cors = require('cors')
-require('dotenv').config()
+require('dotenv').config() 
 const app = express()
 const port =  process.env.PORT || 5000
 
-console.log(process.env.DB_USERS)
-console.log(process.env.DB_PASS)
+console.log(process.env.DB_USERZ)
+console.log(process.env.DB_PASSZ)
 
 app.use(cors())
 app.use(express.json());
@@ -17,7 +17,7 @@ app.get('/', (req, res) => {
 ////////////////////////////mongodb//////////////////////////////////////////
 
 const { MongoClient, ServerApiVersion, ObjectId } = require('mongodb');
-const uri = `mongodb+srv://${process.env.DB_USERS}:${process.env.DB_PASS}@cluster0.ruz4b.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`
+const uri = `mongodb+srv://${process.env.DB_USERZ}:${process.env.DB_PASSZ}@cluster0.ruz4b.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`
 
 // Create a MongoClient with a MongoClientOptions object to set the Stable API version
 const client = new MongoClient(uri, {
@@ -89,7 +89,7 @@ async function run() {
       const cursor = nextCollection.find();
       const result = await cursor.toArray();
       res.send(result)
-     
+      
     })
      ///////next.jsData///////////
 
@@ -337,3 +337,23 @@ run().catch(console.dir);
 app.listen(port, () => {
   console.log(`ThinkUp sever port ${port}`)
 })
+
+
+
+
+// {
+//   "version": 2,
+//   "builds": [
+//       {
+//           "src": "./index.js",
+//           "use": "@vercel/node"
+//       }
+//   ],
+//   "routes": [
+//       {
+//           "src": "/(.*)",
+//           "dest": "/",
+//           "methods": ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"]
+//       }
+//   ]
+// }
